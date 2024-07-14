@@ -76,7 +76,7 @@ class _SignUpViewState extends State<SignUpView> {
               text: 'Already have an account? ',
               text2: 'Sign In',
               onTap: TapGestureRecognizer()
-                ..onTap = () => goTo(SignInView.route),
+                ..onTap = () => goTo(SignInView.route, arguments: true),
               textColor: kText4Color,
               fontWeight: w400,
               fontSize: kfsMedium,

@@ -56,7 +56,7 @@ class OnboardingFooter extends StatelessWidget {
                       width: screenWidth * .8,
                       onTap: () {
                         context.onboarding.setAuthStatus();
-                        goTo(SignInView.route);
+                        goTo(SignInView.route, arguments: true);
                       },
                       text: 'Get Started',
                     ),

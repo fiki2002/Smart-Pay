@@ -10,19 +10,10 @@ class UserInfoDetailsForm extends StatefulWidget {
 
 class _UserInfoDetailsFormState extends State<UserInfoDetailsForm> {
   final GlobalKey<FormState> _key = GlobalKey<FormState>();
-  bool _isButtonActive = false;
-
   @override
   Widget build(BuildContext context) {
     return Form(
       key: _key,
-      onChanged: () {
-        setState(
-          () {
-            _isButtonActive = _key.currentState?.validate() ?? false;
-          },
-        );
-      },
       child: Column(
         children: [
           TextFieldWidget(
@@ -68,7 +59,6 @@ class _UserInfoDetailsFormState extends State<UserInfoDetailsForm> {
           ),
           vSpace(kGlobalPadding),
           Button(
-            active: _isButtonActive,
             onTap: _submit,
             text: 'Continue',
           ),
