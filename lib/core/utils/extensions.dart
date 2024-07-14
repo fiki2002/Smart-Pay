@@ -164,8 +164,21 @@ extension ValidatingExtensions on String {
     }
 
     if (!RegExp(r'\d').hasMatch(this)) {
-      return 'Password requires at least a number';
+      return 'Password needs at least a number';
     }
+
+    if (!RegExp(r'[A-Z]').hasMatch(this)) {
+      return 'Password needs at least an uppercase letter';
+    }
+
+    if (!RegExp(r'[a-z]').hasMatch(this)) {
+      return 'Password needs at least a lowercase letter';
+    }
+
+    if (!RegExp(r'[!@#$%^&*(),.?":{}|<>]').hasMatch(this)) {
+      return 'Password needs a symbol';
+    }
+
     return null;
   }
 }
