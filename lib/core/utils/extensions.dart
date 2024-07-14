@@ -15,7 +15,8 @@ extension NotifierExtension on BuildContext {
       Provider.of<PasswordRecoveryNotifier>(this, listen: false);
 
   SignUpNotifier get signUp => Provider.of<SignUpNotifier>(this, listen: false);
-  SetPinCodeNotifier get setPin => Provider.of<SetPinCodeNotifier>(this, listen: false);
+  SetPinCodeNotifier get setPin =>
+      Provider.of<SetPinCodeNotifier>(this, listen: false);
 }
 
 extension StringExtension on String {
@@ -158,17 +159,13 @@ extension ValidatingExtensions on String {
       return 'Password is required';
     }
 
-    if (!_isValidPassword()) {
-      return 'Password must contain at least 6 characters';
-    }
-
-    return null;
-  }
-
-  bool _isValidPassword() {
     if (length < 6) {
-      return false;
+      return 'Password requires at least 6 characters';
     }
-    return true;
+
+    if (!RegExp(r'\d').hasMatch(this)) {
+      return 'Password requires at least a number';
+    }
+    return null;
   }
 }
