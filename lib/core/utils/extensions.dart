@@ -176,7 +176,7 @@ extension ValidatingExtensions on String {
     }
 
     if (!RegExp(r'[!@#$%^&*(),.?":{}|<>]').hasMatch(this)) {
-      return 'Password needs a symbol';
+      return 'Password needs at least a symbol';
     }
 
     return null;
