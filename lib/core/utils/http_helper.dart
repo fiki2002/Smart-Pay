@@ -205,7 +205,7 @@ class HttpHelper {
               false) {
             return data['errors']['email'][0];
           } else {
-            return 'The email has already been taken.';
+            return message;
           }
         }
         return message;

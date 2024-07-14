@@ -9,7 +9,6 @@ class SignInView extends StatelessWidget {
   static const String route = '/sign_in_view';
   @override
   Widget build(BuildContext context) {
-    print(canPop);
     return ScaffoldWidget(
       resizeToAvoidBottomInset: false,
       body: Column(
