@@ -59,6 +59,10 @@ void authLocator() {
     ),
   );
 
+  getIt.registerLazySingleton<PasswordRecoveryNotifier>(
+    () => PasswordRecoveryNotifier(),
+  );
+
   getIt.registerLazySingleton<SignUpNotifier>(
     () => SignUpNotifier(
       registerUserUsecase: getIt<RegisterUsecase>(),

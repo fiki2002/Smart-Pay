@@ -7,7 +7,7 @@ List<SingleChildWidget> _providers = [
   ChangeNotifierProvider(create: (_) => getIt<SignInNotifier>()),
   ChangeNotifierProvider(create: (_) => getIt<SignUpNotifier>()),
   ChangeNotifierProvider(create: (_) => getIt<DashboardNotifier>()),
-  ChangeNotifierProvider(create: (_) => PasswordRecoveryNotifier()),
+  ChangeNotifierProvider(create: (_) => getIt<PasswordRecoveryNotifier>()),
   ChangeNotifierProvider(create: (_) => getIt<PasswordRecoveryNotifier>()),
   ChangeNotifierProvider(create: (_) => getIt<SetPinCodeNotifier>()),
 ];

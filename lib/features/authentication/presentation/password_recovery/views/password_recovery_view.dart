@@ -33,6 +33,7 @@ class _PasswordRecoveryViewState extends State<PasswordRecoveryView> {
                 ),
                 vSpace(kfs32),
                 Form(
+                  autovalidateMode: AutovalidateMode.onUserInteraction,
                   key: _key,
                   child: TextFieldWidget(
                     hintText: 'Email',

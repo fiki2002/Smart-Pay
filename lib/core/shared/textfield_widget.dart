@@ -48,6 +48,7 @@ class TextFieldWidget extends StatelessWidget {
           validator: validator,
           onTap: onTap,
           readOnly: isReadOnly,
+          autovalidateMode: AutovalidateMode.onUserInteraction,
           obscureText: value && isPassword,
           style: TextStyle(
             fontFamily: 'SF Pro Display',

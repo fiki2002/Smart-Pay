@@ -201,7 +201,12 @@ class HttpHelper {
           return "Unable to connect to server, contact support";
         }
         if (message == 'The given data was invalid.') {
-          return data['errors']['email'][0];
+          if ((data['errors']['email'] as List<dynamic>?)?.isNotEmpty ??
+              false) {
+            return data['errors']['email'][0];
+          } else {
+            return 'The email has already been taken.';
+          }
         }
         return message;
       }
