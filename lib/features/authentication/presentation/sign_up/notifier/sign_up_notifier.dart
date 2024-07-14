@@ -123,7 +123,7 @@ class SignUpNotifier extends ChangeNotifier {
         await _sessionManager.setToken(r.token ?? '');
         await _sessionManager.saveFullName(r.user?.userName ?? '');
         _resetSignUpData();
-        clearRoad(SetPinCodeView.route);
+        clearRoad(SetPinCodeView.route, arguments: false);
       },
     );
   }

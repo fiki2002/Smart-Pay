@@ -61,7 +61,7 @@ class DashboardNotifier extends ChangeNotifier {
       (r) {
         _sessionManager.clearStorage();
 
-        clearRoad(SignInView.route);
+        clearRoad(SignInView.route, arguments: false);
       },
     );
   }

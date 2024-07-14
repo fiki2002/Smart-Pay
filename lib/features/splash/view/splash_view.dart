@@ -119,9 +119,9 @@ class _SplashViewState extends State<SplashView>
       case UserAuthStatus.loggedInNoPin:
         clearRoad(SetPinCodeView.route);
       case UserAuthStatus.onboard:
-        clearRoad(SignInView.route);
+        clearRoad(SignInView.route, arguments: false);
       default:
-        clearRoad(OnboardingView.route);
+        clearRoad(OnboardingView.route, arguments: false);
     }
   }
 

@@ -3,7 +3,8 @@ import 'package:smart_pay/core/core.dart';
 import 'package:smart_pay/features/features.dart';
 
 class SignInView extends StatelessWidget {
-  const SignInView({super.key});
+  const SignInView({super.key, this.canPop = true});
+  final bool? canPop;
 
   static const String route = '/sign_in_view';
   @override
@@ -13,8 +14,10 @@ class SignInView extends StatelessWidget {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          vSpace(kSize5),
-          const BackWidget(),
+          if (canPop == true) ...[
+            vSpace(kSize5),
+            const BackWidget(),
+          ],
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,

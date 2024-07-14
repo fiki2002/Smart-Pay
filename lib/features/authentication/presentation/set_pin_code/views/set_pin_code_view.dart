@@ -2,9 +2,10 @@ import 'package:smart_pay/core/core.dart';
 import 'package:smart_pay/features/features.dart';
 
 class SetPinCodeView extends StatefulWidget {
-  const SetPinCodeView({super.key});
+  const SetPinCodeView({super.key, this.canPop = true});
 
   static const String route = '/set-pin-code';
+  final bool? canPop;
 
   @override
   State<SetPinCodeView> createState() => _SetPinCodeViewState();
@@ -28,8 +29,10 @@ class _SetPinCodeViewState extends State<SetPinCodeView> {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          vSpace(kSize5),
-          const BackWidget(),
+          if (widget.canPop == true) ...[
+            vSpace(kSize5),
+            const BackWidget(),
+          ],
           vSpace(kfs32),
           const AuthHeader(
             title: 'Set your PIN code',

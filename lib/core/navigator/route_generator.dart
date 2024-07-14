@@ -3,6 +3,8 @@ import 'package:smart_pay/features/features.dart';
 
 class RouteGenerator {
   static Route<dynamic> generateRoute(RouteSettings settings) {
+    final Object? args = settings.arguments;
+
     switch (settings.name) {
       case '/':
         return pageRoute(const SplashView());
@@ -11,7 +13,10 @@ class RouteGenerator {
         return pageRoute(const OnboardingView());
 
       case SignInView.route:
-        return pageRoute(const SignInView());
+        final param = args as bool?;
+        return pageRoute(
+          SignInView(canPop: param),
+        );
 
       case DashboardView.route:
         return pageRoute(const DashboardView());
@@ -35,7 +40,10 @@ class RouteGenerator {
         return pageRoute(const GetMoreInfoOnUserView());
 
       case SetPinCodeView.route:
-        return pageRoute(const SetPinCodeView());
+        final param = args as bool?;
+        return pageRoute(
+          SetPinCodeView(canPop: param),
+        );
 
       case PinSetSuccessView.route:
         return pageRoute(const PinSetSuccessView());
